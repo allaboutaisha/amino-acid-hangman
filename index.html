@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amino Acid Hangman</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+    <main id="welcome-screen">
+        <h1>Welcome to Aisha's Hangman</h1>
+        <p>Tap anywhere to begin</p>
+    </main>
+
+    <main id="game-screen" class="hidden"> 
+        <section class="five-attempts">ATTEMPTS</section>
+        <section class="image">
+            IMAGE
+            <!-- insert 20 images for each word -->
+        </section>
+        <section class="type">_ _ _ _ _</section>
+        
+        <section class="keyboard">
+
+            <button id="q">Q</button>
+            <button id="w">W</button>
+            <button id="e">E</button>
+            <button id="r">R</button>
+            <button id="t">T</button>
+            <button id="y">Y</button>
+            <button id="u">U</button>
+            <button id="i">I</button>
+            <button id="o">O</button>
+            <button id="p">P</button><br>
+
+            <button id="a">A</button>
+            <button id="s">S</button>
+            <button id="d">D</button>
+            <button id="f">F</button>
+            <button id="g">G</button>
+            <button id="h">H</button>
+            <button id="j">J</button>
+            <button id="k">K</button>
+            <button id="l">L</button><br>
+
+            <button id="z">Z</button>
+            <button id="x">X</button>
+            <button id="c">C</button>
+            <button id="v">V</button>
+            <button id="b">B</button>
+            <button id="n">N</button>
+            <button id="m">M</button><br>
+            
+        </section>
+    </section>
+
+    <div class="outsidebuttons">
+        <button id="hint">hint</button>
+        <button id="load-new">load new...</button>
+    </div>
+
+    <div class="popups">
+        <h2 class="game-over">GAME OVER
+            <!-- maybe include sad gif -->
+            <button class="try-again">TRY AGAIN</button>
+            <button class="load-new">LOAD NEW...</button>
+        </h2>
+        <h2 class="word-complete">YOU DID IT!
+            <!-- maybe include happy gif -->
+            <button class="next">NEXT</button>
+            <button class="close">CLOSE</button>
+        </h2>
+    </main>
+
+</body>
+</html>

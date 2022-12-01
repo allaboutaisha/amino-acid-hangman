@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family:'Gill Sans';
+    background-color: rgb(206, 236, 246);
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    /* flex-wrap: wrap; */
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.five-attempts {
+
+}
+
+.keyboard {
+    align-content: space-around;
+}
+
+#hint {
+
+}
+
+#load-new {
+
+}
+
+.game-over {
+    flex-wrap: wrap;
+}
+
+.word-complete {
+
+}
