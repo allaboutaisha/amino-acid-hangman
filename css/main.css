@@ -12,7 +12,10 @@ main {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    /* flex-wrap: wrap; */
+}
+
+h1 {
+    font-size: xxx-large;
 }
 
 .hidden {
@@ -20,25 +23,134 @@ main {
 }
 
 .five-attempts {
-
+    display: flex;
+    /* margin-bottom: 100px; */
+    /* if i make the margin bigger, it pushes everything down */
 }
+/* 
+#guess {
+    border-bottom: solid black 2px;
+    margin: 75px 0px 40px 0px;
+} */
 
 .keyboard {
-    align-content: space-around;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5em auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    gap: 5px; 
+}
+
+#q, #w, #e, #r, #t, #y, #u, #i, #o, #p, #a, #s, #d, #f, #g, #h, #j, #k, #l, #z, #x, #c, #v, #b, #n, #m {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
+    color: grey;
+    border-radius: 10%;
+    cursor: pointer;
+    /* font-size: 12 rem; */
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    /* display: inline-flex; */
+    
 }
 
 #hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+    color: green;
+    font-size: large;
+    cursor: pointer;
+    border: none;
+}
 
+.outsidebuttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    gap: 5px;
+} 
+
+#reset {
+    color: green;
+    font-size: large;
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
 }
 
 #load-new {
+    color: green;
+    font-size: large;
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: 10%;
+}
+
+.popups {
+    display: none;
+    /* display: flex;
+    flex-direction: column;
+    visibility: hidden;  */
+}
+
+.modalTwo {
+    color: pink; 
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.game-over img {
+    width: 100px;
 
 }
 
-.game-over {
-    flex-wrap: wrap;
+.try-again {
+    cursor: pointer;
 }
 
-.word-complete {
+.load-new {
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
+}
 
+.modalThree {
+    color: hotpink;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.next {
+    cursor: pointer;
+}
+
+.close {
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
 }
