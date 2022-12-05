@@ -14,6 +14,10 @@ main {
     min-height: 100vh;
 }
 
+#welcome-screen {
+    color: pink;
+}
+
 h1 {
     font-size: xxx-large;
 }
@@ -23,9 +27,19 @@ h1 {
 }
 
 .five-attempts {
-    display: flex;
+    /* display: flex; */
+    text-align: right;
+    font-size: large;
+    font-weight: bold;
+    /* display: flex; */
     /* margin-bottom: 100px; */
     /* if i make the margin bigger, it pushes everything down */
+}
+
+h2 {
+    color: pink;
+    font-size: xx-large;
+    /* text-align: center; */
 }
 /* 
 #guess {
@@ -33,35 +47,69 @@ h1 {
     margin: 75px 0px 40px 0px;
 } */
 
+#img {
+    border-radius: 50% 50% 50% 50%;
+    border: solid 2px pink;
+    max-width: 20%; 
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 50px;
+} 
+
 .keyboard {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 5em auto;
+    margin: 2em auto;
 }
 
 .row {
     display: flex;
     justify-content: center;
-    padding: 3px;
-    gap: 5px; 
+    padding: 8px;
+    gap: 8px; 
+    /* max-width: 100%;
+    height: auto; */
+}
+
+#q:hover, #w:hover, #e:hover, #r:hover, #t:hover, #y:hover, #u:hover, #i:hover, #o:hover, #p:hover, #a:hover, #s:hover, #d:hover, #f:hover, #g:hover, #h:hover, #j:hover, #k:hover, #l:hover, #z:hover, #x:hover, #c:hover, #v:hover, #b:hover, #n:hover, #m:hover {
+    /* top: 3px;
+    left: -3px; */
+    /* box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.835); */
+    transform: translateY(3px);
+}
+
+#q:active, #w:active, #e:active, #r:active, #t:active, #y:active, #u:active, #i:active, #o:active, #p:active, #a:active, #s:active, #d:active, #f:active, #g:active, #h:active, #j:active, #k:active, #l:active, #z:active, #x:active, #c:active, #v:active, #b:active, #n:active, #m:active {
+    /* top: 6px;
+    left: -6px; */
+    /* box-shadow: none; */
+    /* top: 2px; */
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
+    transform: translateY(4px);
 }
 
 #q, #w, #e, #r, #t, #y, #u, #i, #o, #p, #a, #s, #d, #f, #g, #h, #j, #k, #l, #z, #x, #c, #v, #b, #n, #m {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     font-size: 20px;
-    color: grey;
+    color: black;
+    /* top: 0;
+    left: 0;
+    transition: all .15s linear 0s; */
     border-radius: 10%;
     cursor: pointer;
-    /* font-size: 12 rem; */
     border: none;
-    -webkit-tap-highlight-color: transparent;
-    /* display: inline-flex; */
-    
+    /* outline-offset: 4px; */
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.835);
+    /* box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.835); */
+    /* box-shadow: 0 8px #666; */
+    /* box-shadow: 0 5px 15px -4px #000; */
+    /* transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1); */
+    /* transition: box-shadow 0.2s ease-in, margin-top 0.2s ease-in; */
+
 }
 
 #hint {
@@ -76,7 +124,13 @@ h1 {
     font-size: large;
     cursor: pointer;
     border: none;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
+    /* box-shadow: 0 8px #666; */
 }
+
+/* #hint:hover {
+    
+} */
 
 .outsidebuttons {
     display: flex;
@@ -93,7 +147,15 @@ h1 {
     height: 50px;
     width: 100px;
     border-radius: 10%;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
+    margin-top: 7px;
+    margin-bottom: 7px;
+    /* box-shadow: 0 8px #666; */
 }
+
+/* #reset:hover {
+    
+} */
 
 #load-new {
     color: green;
@@ -103,13 +165,23 @@ h1 {
     height: 50px;
     width: 100px;
     border-radius: 10%;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
+    /* box-shadow: 0 8px #666; */
 }
 
-.popups {
+/* #load-new:hover {
+    
+} */
+
+/* .popups {
     display: none;
-    /* display: flex;
-    flex-direction: column;
-    visibility: hidden;  */
+} */
+
+#modalOne {
+    font-size: xx-large;
+    padding: 50px;
+    text-align: center;
+    color: lightgreen;
 }
 
 .modalTwo {
@@ -122,9 +194,9 @@ h1 {
     border-radius: 3px;
 }
 
-.game-over img {
+.game-over {
+    /* img */
     width: 100px;
-
 }
 
 .try-again {
@@ -132,7 +204,6 @@ h1 {
 }
 
 .load-new {
-    margin: 10px 0px 10px 0px;
     cursor: pointer;
 }
 
@@ -144,6 +215,11 @@ h1 {
     font-size: 22px;
     text-align: center;
     border-radius: 3px;
+}
+
+.you-won {
+    /* img */
+    width: 100px;
 }
 
 .next {

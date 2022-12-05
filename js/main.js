@@ -132,11 +132,47 @@ const hintTxt = document.getElementById('hint-text');
 
 let attempts = 5/5
 
+let renderArr = [];
+
+for (let i = 0; i < randomWord.length; i++) {
+    renderArr.push('_')
+}
+
 letter.addEventListener('click',(event) => {
     if(event.target.tagName !== 'BUTTON') return;
+    console.log(randomWord);
+
+    let isIncluded = randomWord.toUpperCase().includes(event.target.textContent);
+    console.log(isIncluded);
+
+    let idxArr = [];
+    for (let i = 0; i < randomWord.length; i++) {
+        if (randomWord[i].toUpperCase() === event.target.textContent) {
+            idxArr.push(i)
+        }
+    }
+    console.log(idxArr);
+    renderArr.forEach(function(empty, idx) {
+        if (idxArr.includes(idx)) {
+            renderArr[idx] = event.target.textContent
+        }
+    })
+    console.log(renderArr);
+    functionRender(renderArr.join(''))
+
+    function functionRender(string) {
+        let newEl = document.createElement('div')
+        newEl.textContent = string
+        let inputBody = document.querySelector
+    }
+
     letterArray.push(event.target.textContent);
     guessWord.innerHTML = letterArray.join('');
 })
+console.log(randomWord);
+console.log(renderArr);
+
+
 
 hintBtn.addEventListener('click',(event) => {
     hintTxt.innerHTML=hint;
@@ -171,27 +207,27 @@ close.addEventListener('click',(event) => {
 console.log(close)
 
 
-// when randomWord is generated, show image from the same array
 
-// Click letter (function is) to display on line
 
 // Must start with 5 tries 
 
 // when letter is clicked, check IF letter = OR == OR === one or more letters from randomWord at any index,
 
-// guessed letters/word or typed must === randomword at any index
+// guessed letters/word must === randomword at any index
 
-// IF true, display on screen at index where randomWord has it, enter letter through span event, change color of button to green
+// IF true, display on screen at index where randomWord has it, change color of button to green
 
 // ELSE disable button, change color of button, and deduct 1/5 until attempts === 0
 
 // change inner html of attempts every time wrong letter is clicked
 
-// if attempts === 0/5 OR attempts < 1, display gameover popup 
+// if attempts === 0/5 OR attempts < 1/5, display gameover popup 
 
 // if allLetters === randomWord letters, AND attempts >= 1, display winning popup
 
 // If hint button clicked, hint must popup, displaying hint === random word that is generated 
+
+
 
 // const initializer = () => {
 //     attempts = 5/5;
@@ -200,8 +236,6 @@ console.log(close)
 // loadNewButton.addEventListener("click",initializer);
 
 // window.onload = initializer;
-
-// when randomWord is generated, access hint and imageURL
 
 // const wordArray = randomWord.split('');
 
@@ -213,6 +247,11 @@ console.log(close)
 
 // console.log(wordArray);
 
+
+function checkWinner() {
+    if(randomWord === letterArray.join('')) {
+        $modal3.modal();
+    }}
 
 
 
