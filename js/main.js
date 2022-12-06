@@ -23,7 +23,7 @@ function handleClick() {
 
 // GAME-SCREEN:
 
-// worldList = ['Alanine','Isoleucine','Leucine','Methionine','Phenylalanine','Tryptophan','Tyrosine','Valine','Histidine','Lysine','Threonine','Arginine','Asparagine','Aspartic Acid','Cysteine','Glutamic Acid','Glutamine','Glycine','Proline','Serine']
+// Amino Acid Word List = ['Alanine','Isoleucine','Leucine','Methionine','Phenylalanine','Tryptophan','Tyrosine','Valine','Histidine','Lysine','Threonine','Arginine','Asparagine','Aspartic Acid','Cysteine','Glutamic Acid','Glutamine','Glycine','Proline','Serine']
 
 const words = [
     {word: 'Alanine',
@@ -222,18 +222,13 @@ hintBtn.addEventListener('click',(event) => {
 // })
 // console.log(reset)
 
-
-// HOW CAN I REFRESH AT SPECIFIC PAGE/PLACE
 const refreshPage = () => {
     location.reload();
-    // history.go();
-}
+    addEventListener('DOMContentLoaded',(event) => {
+        handleClick();
+    });
+};
 loadNew.addEventListener('click', refreshPage)
-
-// loadNew.addEventListener('click',(event) => {
-//     console.log(event.target)
-// })
-// console.log(loadNew)
 
 tryAgain.addEventListener('click',(event) => {
     console.log(event.target)
@@ -251,18 +246,7 @@ close.addEventListener('click',(event) => {
 console.log(close)
 
 
-// const initializer = () => {
-//     let attempts = 5/5;
-// }
 
-// loadNewButton.addEventListener("click",initializer);
-
-// window.onload = initializer;
-
-
-
-
-// if allLetters === randomWord letters, AND attempts >= 1, display winning popup
 
 
 
