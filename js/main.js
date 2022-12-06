@@ -1,3 +1,5 @@
+// WELCOME-SCREEN
+
 // constants and variables and cached element references
 const $body = $('body');
 const $welcomeScreen = $('#welcome-screen');
@@ -19,8 +21,9 @@ function handleClick() {
     $gameScreen.removeClass('hidden');
 }
 
-// worldList = ['Alanine','Isoleucine','Leucine','Methionine','Phenylalanine','Tryptophan','Tyrosine','Valine','Histidine','Lysine','Threonine','Arginine','Asparagine','Aspartic Acid','Cysteine','Glutamic Acid','Glutamine','Glycine','Proline','Serine']
+// GAME-SCREEN:
 
+// worldList = ['Alanine','Isoleucine','Leucine','Methionine','Phenylalanine','Tryptophan','Tyrosine','Valine','Histidine','Lysine','Threonine','Arginine','Asparagine','Aspartic Acid','Cysteine','Glutamic Acid','Glutamine','Glycine','Proline','Serine']
 
 const words = [
     {word: 'Alanine',
@@ -118,7 +121,7 @@ const letter = document.querySelector('.keyboard');
 
 const hintBtn = document.querySelector('#hint');
 
-const reset = document.querySelector('#reset');
+// const reset = document.querySelector('#reset');
 
 const loadNew = document.querySelector('#load-new');
 
@@ -130,49 +133,82 @@ const close = document.querySelector('.close');
 
 const hintTxt = document.getElementById('hint-text');
 
-let attempts = 5/5
+const attemptsSection = document.querySelector(".five-attempts");
+
+
+let attempts = 5;
 
 let renderArr = [];
+
+// const gameOver = function() {
+//     if (attempts === 0) {
+//         attemptsSection.textContent = `ATTEMPTS = ${attempts}`;
+//     }
+// }
+
+const decreaseAttempt = function() {
+    attempts --;
+    attemptsSection.textContent = `ATTEMPTS = ${attempts}`;
+    if (attempts === 0) {
+        return $modal2.modal();
+        attempts === 0;
+        // event.target.disabled = true;
+    }
+
+    // else if (attempts === 0) {
+    //     return $modal2.modal();
+    // }
+}
 
 for (let i = 0; i < randomWord.length; i++) {
     renderArr.push('_')
 }
 
+functionRender();
+
 letter.addEventListener('click',(event) => {
-    if(event.target.tagName !== 'BUTTON') return;
-    console.log(randomWord);
+    if(event.target.tagName !== 'BUTTON' || event.target.disabled) return;
+
+    event.target.disabled = true;
+
 
     let isIncluded = randomWord.toUpperCase().includes(event.target.textContent);
-    console.log(isIncluded);
+
+    if (!isIncluded) {
+        decreaseAttempt();
+    }
 
     let idxArr = [];
+
     for (let i = 0; i < randomWord.length; i++) {
         if (randomWord[i].toUpperCase() === event.target.textContent) {
             idxArr.push(i)
         }
     }
-    console.log(idxArr);
+
     renderArr.forEach(function(empty, idx) {
         if (idxArr.includes(idx)) {
             renderArr[idx] = event.target.textContent
         }
     })
-    console.log(renderArr);
-    functionRender(renderArr.join(''))
+    
+    functionRender();
+    checkWinner();
+    // 
+    letterArray.push(event.target.textContent);
+})
 
-    function functionRender(string) {
-        let newEl = document.createElement('div')
-        newEl.textContent = string
-        let inputBody = document.querySelector
+    function functionRender() {
+        guessWord.innerHTML =renderArr.join(' ');
     }
 
-    letterArray.push(event.target.textContent);
-    guessWord.innerHTML = letterArray.join('');
-})
-console.log(randomWord);
-console.log(renderArr);
+    console.log(renderArr)
 
-
+function checkWinner() {
+    console.log(renderArr);
+    if(randomWord === renderArr.join('')) {
+        $modal3.modal();
+    }};
 
 hintBtn.addEventListener('click',(event) => {
     hintTxt.innerHTML=hint;
@@ -181,15 +217,23 @@ hintBtn.addEventListener('click',(event) => {
      });
 })
 
-reset.addEventListener('click',(event) => {
-    console.log(event.target)
-})
-console.log(reset)
+// reset.addEventListener('click',(event) => {
+//     console.log(event.target)
+// })
+// console.log(reset)
 
-loadNew.addEventListener('click',(event) => {
-    console.log(event.target)
-})
-console.log(loadNew)
+
+// HOW CAN I REFRESH AT SPECIFIC PAGE/PLACE
+const refreshPage = () => {
+    location.reload();
+    // history.go();
+}
+loadNew.addEventListener('click', refreshPage)
+
+// loadNew.addEventListener('click',(event) => {
+//     console.log(event.target)
+// })
+// console.log(loadNew)
 
 tryAgain.addEventListener('click',(event) => {
     console.log(event.target)
@@ -207,51 +251,22 @@ close.addEventListener('click',(event) => {
 console.log(close)
 
 
-
-
-// Must start with 5 tries 
-
-// when letter is clicked, check IF letter = OR == OR === one or more letters from randomWord at any index,
-
-// guessed letters/word must === randomword at any index
-
-// IF true, display on screen at index where randomWord has it, change color of button to green
-
-// ELSE disable button, change color of button, and deduct 1/5 until attempts === 0
-
-// change inner html of attempts every time wrong letter is clicked
-
-// if attempts === 0/5 OR attempts < 1/5, display gameover popup 
-
-// if allLetters === randomWord letters, AND attempts >= 1, display winning popup
-
-// If hint button clicked, hint must popup, displaying hint === random word that is generated 
-
-
-
 // const initializer = () => {
-//     attempts = 5/5;
+//     let attempts = 5/5;
 // }
 
 // loadNewButton.addEventListener("click",initializer);
 
 // window.onload = initializer;
 
-// const wordArray = randomWord.split('');
-
-// const placeHolder = wordArray.map(function () {
-//     return '_'
-// });
-
-// document.body.innerHTML = placeHolder.join(' ');
-
-// console.log(wordArray);
 
 
-function checkWinner() {
-    if(randomWord === letterArray.join('')) {
-        $modal3.modal();
-    }}
+
+// if allLetters === randomWord letters, AND attempts >= 1, display winning popup
+
+
+
+
 
 
 
