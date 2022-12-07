@@ -1,6 +1,6 @@
 # first-project
 Amino Acid Hangman
-include link here
+https://allaboutaisha.github.io/first-project/
 
 # Screenshot of Game
 ![](https://github.com/allaboutaisha/first-project/blob/main/Game%20Screen.png)
