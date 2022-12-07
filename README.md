@@ -10,10 +10,10 @@ https://allaboutaisha.github.io/first-project/
 ### Wireframe
 ![](https://github.com/allaboutaisha/first-project/blob/main/Wireframe.png)
 
-### Game Instructions:
+### Game Instructions 
 Look at the image. Guess which amino acid you think it is and start clicking away! Don’t use up all of your attempts, otherwise you lose! 
 
-### Technologies Used:
+### Technologies Used 
 - Javascript
 - JQuery
 - CSS
