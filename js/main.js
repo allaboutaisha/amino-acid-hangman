@@ -6,7 +6,6 @@ const $gameScreen = $('#game-screen');
 loadNew.addEventListener('click', refreshPage);
 $body.on('click',handleClick);
 
-
 function handleClick() {
     $welcomeScreen.remove();
     $gameScreen.removeClass('hidden');
@@ -17,7 +16,6 @@ function refreshPage () {
     handleClick();
     document.querySelectorAll('.key').forEach(b => b.disabled = false);
 };
-
 
 runGame();
 
@@ -124,50 +122,38 @@ function runGame() {
     imgSrc.src = img;
 
     const guessWord = document.getElementById('guess');
-
     const letter = document.querySelector('.keyboard');
-
-    const hintBtn = document.querySelector('#hint');
-
-    const reset = document.querySelector('#reset');
-
     const tryAgain = document.querySelector('.try-again');
-
     const next = document.querySelector('.next');
-
-    const close = document.querySelector('.close');
-
+    const hintBtn = document.querySelector('#hint');
     const hintTxt = document.getElementById('hint-text');
-
+    const reset = document.querySelector('#reset');
+    // const close = document.querySelector('.close');
     const attemptsSection = document.querySelector(".five-attempts");
 
-
     let attempts = 5;
-
     let renderArr = [];
 
-
     const decreaseAttempt = function() {
-        if (attempts === 1) {
+        attempts--;
+        attemptsSection.textContent = `ATTEMPTS = ${attempts}/5`;
+        if (attempts === 0) {
             return $modal2.modal({
                 escapeClose: false,
                 clickClose: false,
                 showClose: false
               });
-        } else {
-            attempts--;
-            attemptsSection.textContent = `ATTEMPTS = ${attempts}/5`;
-        }
+        } 
     }
     
     function checkWinner() {
         if(renderArr.join('') === randomWord.toUpperCase()) {
-            console.log('checkWinner')
-            return $modal3.modal({
-                escapeClose: false,
-                clickClose: false,
+            return $modal3.modal({ 
+                // escapeClose: false,
+                // clickClose: false,
                 showClose: false
-            });
+            
+        });
         }};
 
     createRenderArray();
@@ -187,16 +173,13 @@ function runGame() {
 
     letter.addEventListener('click',(event) => {
         if(event.target.tagName !== 'BUTTON' || event.target.disabled) return;
-
         event.target.disabled = true;
-
-
         let isIncluded = randomWord.toUpperCase().includes(event.target.textContent);
 
         if (!isIncluded) {
             decreaseAttempt();
         }
-    
+        
         let idxArr = [];
 
         for (let i = 0; i < randomWord.length; i++) {
@@ -210,10 +193,9 @@ function runGame() {
                 renderArr[idx] = event.target.textContent
             }
         })
-        console.log('click')
-        checkWinner();
-
+  
         functionRender();
+        checkWinner();
     
         letterArray.push(event.target.textContent);
     })
@@ -225,7 +207,8 @@ function runGame() {
         });
     })
 
-    reset.addEventListener('click',(event) => {
+    tryAgain.addEventListener('click',(event) => {
+        $modal2.modal("hide");
         attempts = 5;
         attemptsSection.textContent = `ATTEMPTS = ${attempts}/5`;
         renderArr = [];
@@ -233,28 +216,18 @@ function runGame() {
         document.querySelectorAll('.key').forEach(b => b.disabled = false);
     });
     
+    next.addEventListener('click',(event) => {
+        refreshPage();
+    });
 
-    tryAgain.addEventListener('click',(event) => {
+    reset.addEventListener('click',(event) => {
         attempts = 5;
         attemptsSection.textContent = `ATTEMPTS = ${attempts}/5`;
         renderArr = [];
         createRenderArray();
         document.querySelectorAll('.key').forEach(b => b.disabled = false);
-    })
-
-    next.addEventListener('click',(event) => {
-        console.log(event.target)
-    })
-
-    close.addEventListener('click',(event) => {
-        console.log(event.target)
-    })
+    });
 }
-
-
-
-
-
 
 
 

@@ -3,7 +3,6 @@ html, body {
     width: 100%;
     font-family:'Gill Sans';
     background-color: rgb(206, 236, 246);
-
 }
 
 main {
@@ -27,20 +26,14 @@ h1 {
 }
 
 .five-attempts {
-    /* display: flex; */
-    text-align: right;
     font-size: large;
     font-weight: bold;
-    margin-top: 10px;
-    /* display: flex; */
-    /* margin-bottom: 100px; */
-    /* if i make the margin bigger, it pushes everything down */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h2 {
     color: pink;
-    font-size: xx-large;
-    /* text-align: center; */
+    font-size: xxx-large;
 }
 
 #guess {
@@ -48,12 +41,12 @@ h2 {
 }
 
 #img {
-    border-radius: 50% 50% 50% 50%;
+    border-radius: 50%;
     border: solid 5px pink;
     max-width: 20%; 
     height: auto;
     object-fit: contain;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     background-color: white;
 } 
 
@@ -69,27 +62,18 @@ h2 {
     justify-content: center;
     padding: 8px;
     gap: 8px; 
-    /* max-width: 100%;
-    height: auto; */
 }
 
-#q:hover, #w:hover, #e:hover, #r:hover, #t:hover, #y:hover, #u:hover, #i:hover, #o:hover, #p:hover, #a:hover, #s:hover, #d:hover, #f:hover, #g:hover, #h:hover, #j:hover, #k:hover, #l:hover, #z:hover, #x:hover, #c:hover, #v:hover, #b:hover, #n:hover, #m:hover {
-    /* top: 3px;
-    left: -3px; */
-    /* box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.835); */
+.key:hover {
     transform: translateY(3px);
 }
 
-#q:active, #w:active, #e:active, #r:active, #t:active, #y:active, #u:active, #i:active, #o:active, #p:active, #a:active, #s:active, #d:active, #f:active, #g:active, #h:active, #j:active, #k:active, #l:active, #z:active, #x:active, #c:active, #v:active, #b:active, #n:active, #m:active {
-    /* top: 6px;
-    left: -6px; */
-    /* box-shadow: none; */
-    /* top: 2px; */
+.key:active {
     box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
     transform: translateY(4px);
 }
 
-#q, #w, #e, #r, #t, #y, #u, #i, #o, #p, #a, #s, #d, #f, #g, #h, #j, #k, #l, #z, #x, #c, #v, #b, #n, #m {
+.key {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,41 +81,63 @@ h2 {
     width: 60px;
     font-size: 20px;
     color: black;
-    /* top: 0;
-    left: 0;
-    transition: all .15s linear 0s; */
     border-radius: 10%;
     cursor: pointer;
     border: none;
-    /* outline-offset: 4px; */
     box-shadow: 6px 6px rgba(0, 0, 0, 0.835);
-    /* box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.835); */
-    /* box-shadow: 0 8px #666; */
-    /* box-shadow: 0 5px 15px -4px #000; */
-    /* transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1); */
-    /* transition: box-shadow 0.2s ease-in, margin-top 0.2s ease-in; */
+}
 
+.space-bar:hover {
+    transform: translateY(3px);
+}
+
+.space-bar:active {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
+    transform: translateY(4px);
+}
+
+.space-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 250px;
+    font-size: 20px;
+    color: black;
+    border-radius: 10%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.835);
 }
 
 #hint {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    color: rgb(16, 164, 13);
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
     height: 50px;
     width: 100px;
     border-radius: 10%;
-    color: green;
-    font-size: large;
-    cursor: pointer;
-    border: none;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
-    /* box-shadow: 0 8px #666; */
+    margin-top: 7px;
 }
 
-/* #hint:hover {
-    
-} */
+#hint:hover {
+    transform: translateY(3px);
+}
+
+#hint:active {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
+    transform: translateY(4px);
+}
+
+#modalOne {
+    font-size: xx-large;
+    padding: 60px;
+    text-align: center;
+    color: lightgreen;
+}
 
 .outsidebuttons {
     display: flex;
@@ -141,8 +147,9 @@ h2 {
 } 
 
 #reset {
-    color: green;
+    color: rgb(16, 164, 13);
     font-size: large;
+    font-weight: bold;
     cursor: pointer;
     border: none;
     height: 50px;
@@ -151,77 +158,61 @@ h2 {
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
     margin-top: 7px;
     margin-bottom: 7px;
-    /* box-shadow: 0 8px #666; */
 }
 
-/* #reset:hover {
-    
-} */
+#reset:hover {
+    transform: translateY(3px);
+}
+
+#reset:active {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
+    transform: translateY(4px);
+}
 
 #load-new {
-    color: green;
+    color: rgb(16, 164, 13);
     font-size: large;
+    font-weight: bold;
     cursor: pointer;
     border: none;
     height: 50px;
     width: 100px;
     border-radius: 10%;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
-    /* box-shadow: 0 8px #666; */
 }
 
-/* #load-new:hover {
-    
-} */
-
-.popups {
-    /* height: 100%;
-    width: 100%; */
+#load-new:hover {
+    transform: translateY(3px);
 }
 
-iframe {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    /* max-width: 500px; 
-    height: 500px; */
-    object-fit: contain;
-    background-color: black;
+#load-new:active {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
+    transform: translateY(4px);
 }
 
-#modalOne {
-    font-size: xx-large;
-    padding: 50px;
-    text-align: center;
-    color: lightgreen;
-}
-
-.modalTwo {
-    /* height: 100%;
-    width: 100%; */
-    color: pink; 
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    
-    /* border-radius: 3px; */
-}
-
-.game-over {
-    /* img */
-    /* width: 100%;
-    height: auto; */
-}
-
-.try-again {
+.modalTwoStyling {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.modalTwoStyling h2 {
+    margin: auto;
+    font-size: xxx-large;
+}
+
+.modalTwoStyling p {
+    margin: 10px;
+}
+
+.try-again {
+    margin-bottom: 10px;
+    background-color: lightpink;
     height: 50px;
     width: auto;
-    border-radius: 10%;
-    color: tomato;
+    border-radius: 15%;
+    color: mintcream;
     font-size: x-large;
     border: none;
     cursor: pointer;
@@ -229,36 +220,51 @@ iframe {
 
 .load-new {
     background-color: lightpink;
-    justify-content: center;
     height: 50px;
     width: auto;
-    border-radius: 10%;
+    border-radius: 15%;
     color: mintcream;
     font-size: x-large;
     border: none;
     cursor: pointer;
 }
 
-.modalThree {
-    color: hotpink;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-size: 22px;
-    text-align: center;
-    border-radius: 3px;
+.modalThreeStyling {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.you-won {
-    /* img */
-    width: 100px;
+.modalThreeStyling h2 {
+    margin: auto;
+    font-size: xxx-large;
+}
+
+.modalThreeStyling p {
+    margin: 10px;
 }
 
 .next {
+    background-color: lightpink;
+    height: 50px;
+    width: auto;
+    border-radius: 15%;
+    color: mintcream;
+    font-size: x-large;
+    border: none;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
-.close {
-    margin: 10px 0px 10px 0px;
+/* .close {
+    background-color: lightpink;
+    height: 50px;
+    width: auto;
+    border-radius: 15%;
+    color: mintcream;
+    font-size: x-large;
+    border: none;
     cursor: pointer;
-}
+} */
