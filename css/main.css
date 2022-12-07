@@ -31,6 +31,7 @@ h1 {
     text-align: right;
     font-size: large;
     font-weight: bold;
+    margin-top: 10px;
     /* display: flex; */
     /* margin-bottom: 100px; */
     /* if i make the margin bigger, it pushes everything down */
