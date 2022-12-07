@@ -1,5 +1,7 @@
 # first-project
-Amino Acid Hangman
+
+## Aisha's Amino Acid Hangman
+I created a hangman game that allows you to guess the structure of an amino acid. Hangman was always one of my favorites so I started to think how can I make it unique. I thought of a few ideas and noticed, after a Google search, that there wasn’t a hangman on the amino acid structures. Since I was a chemistry major, I knew I had to fix this. Click the link below to play my amino acid hangman game! 
 https://allaboutaisha.github.io/first-project/
 
 # Screenshot of Game
@@ -24,7 +26,7 @@ Look at the image. Guess which amino acid you think it is and start clicking awa
 - Keyboard styling and functionality 
 
 # Next Steps
-- Improve styling
-- Give close button option 
-- Type in word option 
-- Include media query 
+- Improve styling (update images)
+- Add "close" button option 
+- Include type in word option 
+- Incorporate media query 
