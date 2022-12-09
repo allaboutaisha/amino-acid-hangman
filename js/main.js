@@ -192,20 +192,20 @@ function runGame() {
             if (idxArr.includes(idx)) {
                 renderArr[idx] = event.target.textContent
             }
-        })
+        });
   
         functionRender();
         checkWinner();
     
         letterArray.push(event.target.textContent);
-    })
+    });
 
     hintBtn.addEventListener('click',(event) => {
         hintTxt.innerHTML=hint;
         $modal1.modal({
             fadeDuration: 500
         });
-    })
+    });
 
     tryAgain.addEventListener('click',(event) => {
         $modal2.modal("hide");
