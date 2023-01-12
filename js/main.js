@@ -17,6 +17,7 @@ function refreshPage () {
     document.querySelectorAll('.key').forEach(b => b.disabled = false);
 };
 
+// closure function is causing bugs 
 runGame();
 
 function runGame() {
