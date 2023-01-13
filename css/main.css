@@ -169,7 +169,7 @@ h2 {
     transform: translateY(4px);
 }
 
-#load-new {
+.load-new {
     color: rgb(16, 164, 13);
     font-size: large;
     font-weight: bold;
@@ -181,11 +181,11 @@ h2 {
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.835);
 }
 
-#load-new:hover {
+.load-new:hover {
     transform: translateY(3px);
 }
 
-#load-new:active {
+.load-new:active {
     box-shadow: 3px 3px rgba(0, 0, 0, 0.835);
     transform: translateY(4px);
 }
@@ -206,19 +206,8 @@ h2 {
     margin: 10px;
 }
 
-.try-again {
+.try-again, #load-new {
     margin-bottom: 10px;
-    background-color: lightpink;
-    height: 50px;
-    width: auto;
-    border-radius: 15%;
-    color: mintcream;
-    font-size: x-large;
-    border: none;
-    cursor: pointer;
-}
-
-.load-new {
     background-color: lightpink;
     height: 50px;
     width: auto;
